@@ -1,0 +1,27 @@
+<!-- templates/cards/card.html -->
+
+<article>
+    <h4>{{ card.question |safe}}</h4>
+    {% if not check_card %}
+        <p>{{ card.answer |safe}}</p>
+        <hr>
+        <a href="{% url 'card-update' card.id %}" role="button" style="color:white">
+            ✏️ Edit Card
+        </a>
+
+        <br></br>
+
+        <a href="{% url 'card-delete' card.id %}" role="button" style="color:red">
+
+            ❌️ Delete Card
+        </a>
+    {% else %}
+        <details>
+            <summary>Reveal Answer</summary>
+            <p>{{ card.answer |safe}}</p>
+        </details>
+        <hr>
+        {% include "cards/card_check_form.html" with solved=True %}
+        {% include "cards/card_check_form.html" with solved=False %}
+    {% endif %}
+</article>

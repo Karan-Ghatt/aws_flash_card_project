@@ -1,0 +1,13 @@
+<!-- cards/templates/confirm_delete.html -->
+{% extends "cards/base.html" %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to this question "{{ object }}"?</p>
+  <input type="submit" value="Delete">
+</form>
+    <a href="{% url 'card-list' %}">
+        Cancel
+    </a>
+{% endblock %}

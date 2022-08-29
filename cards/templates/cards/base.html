@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AWS Flash Cards</title>
+</head>
+
+<body>
+    <header>
+        <h1>AWS Flashcards App</h1>
+        {% include "cards/navigation.html" %}
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    </header>
+    <main>
+        {% block content %}
+            <h2>Welcome to the app!</h2>
+        {% endblock content %}
+    </main>
+</body>
+
+</html>
